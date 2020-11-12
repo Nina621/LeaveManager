@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LeaveManagment.Models.EmployeesModel>
+
+@{
+    ViewData["Title"] = "GetEmployees";
+}
+
+<h1>Get Employees</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateJoined)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateJoined)
+            </td>
+            <td>
+                <a id=" Details" type="submit" class="btn btn-outline-dark" asp-controller="LeaveAllocation" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info-circle"></i> Details </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

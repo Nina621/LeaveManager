@@ -1,0 +1,37 @@
+﻿@model LeaveManagment.Models.DetailsLeaveAllocationViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Employees Model</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.employeeModel.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.employeeModel.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.employeeModel.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.employeeModel.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.employeeModel.DateJoined)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.employeeModel.DateJoined)
+        </dd>
+    </dl>
+</div>
+
+
+<div>
+    <a id="BackToList" type="submit" class="btn btn-outline-dark" asp-controller="LeaveType" asp-action="Index"><i class="fa fa-arrow-circle-left"></i> Back to list</a>
+</div>

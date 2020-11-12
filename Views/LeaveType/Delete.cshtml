@@ -1,0 +1,33 @@
+﻿@model LeaveManagment.Models.LeaveTypeModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+
+<div>
+    <h4>Leave Type Model</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberOfDays)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfDays)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button  type="submit"  class="btn btn-outline-danger"><i class="fa fa-trash"></i> Delete</button>
+        <a id="BackToList" type="submit" class="btn btn-outline-danger" asp-controller="LeaveType" asp-action="Index"><i class="fa fa-arrow-circle-left"></i> Back to list</a>
+    </form>
+</div>
